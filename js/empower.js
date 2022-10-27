@@ -30,34 +30,34 @@ function emoji(face, startx, starty, flour, fs) {
   this.element.style.opacity = "1";
   this.element.style.zIndex = "1";
   document.body.appendChild(this.element);
+  this.refresh = refresh;
+}
 
-  this.refresh = function () {
-    if (this.x <= 0) {
-      this.isAlive = false;
-    }
-    if (this.x + this.xincrement >= (window.innerWidth - this.fontSize * 2)) {
-      this.isAlive = false;
-    }
-    if (this.isAlive) {
-      //------Y axis-----        
-      this.y += this.yincrement;
-      this.x += this.xincrement;
-      this.yincrement += 0.25;
-
-      if (this.y + this.yincrement >= this.flourLevel) {
-        if (parseFloat(this.element.style.opacity) <= 0.1) {
-          this.isAlive = false;
-        }
-        this.element.style.opacity = parseFloat(this.element.style.opacity) - 0.1;
-        this.yincrement = -this.yincrement + 2;
-      }
-      this.element.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
-    }
-    else {
-      this.element.style.transform = "translate(px, px)";
-    }
+function refresh() {
+  if (this.x <= 0) {
+    this.isAlive = false;
   }
+  if (this.x + this.xincrement >= (window.innerWidth - this.fontSize * 2)) {
+    this.isAlive = false;
+  }
+  if (this.isAlive) {
+    //------Y axis-----        
+    this.y += this.yincrement;
+    this.x += this.xincrement;
+    this.yincrement += 0.25;
 
+    if (this.y + this.yincrement >= this.flourLevel) {
+      if (parseFloat(this.element.style.opacity) <= 0.1) {
+        this.isAlive = false;
+      }
+      this.element.style.opacity = parseFloat(this.element.style.opacity) - 0.1;
+      this.yincrement = -this.yincrement + 2;
+    }
+    this.element.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
+  }
+  else {
+    this.element.style.transform = "translate(px, px)";
+  }
 }
 
 
