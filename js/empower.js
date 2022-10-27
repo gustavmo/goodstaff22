@@ -1,13 +1,12 @@
 
-var flyingMen = [];
-var button = [];
-var touched = [];
+let flyingMen = [];
+let touched = [];
 
-var wrapper = document.getElementById('people-wrapper');
-var button = document.getElementsByClassName('people');
-var prize = document.getElementsByClassName('prize');
-var simon = ['🤗', '💝','🧡','🥰', '💖'];
-var fsize = "30";
+let wrapper = document.getElementById('people-wrapper');
+let button = document.getElementsByClassName('people');
+let prize = document.getElementsByClassName('prize');
+let simon = ['🤗', '💝','🧡','🥰', '💖'];
+let fsize = "30";
 //emoji object
   function emoji(face, startx, starty, flour, fs) {
     this.isAlive = true;
@@ -71,12 +70,12 @@ var fsize = "30";
 function goB(index) {
 	
   if(touched[index] === false){
-	  var fontsize = fsize;
-	  var xv = (button[index].getBoundingClientRect().left + button[index].getBoundingClientRect().right)/2 - (fontsize/2);
-	  var yv = (button[index].getBoundingClientRect().top + button[index].getBoundingClientRect().bottom)/2;
-	  var fl = window.innerHeight - fontsize -10;
-	  for (var i = 0; i < 10; i++) {
-		var coolGuy = new emoji(simon[Math.floor(Math.random() * simon.length)], xv, yv, fl, fontsize);
+	let fontsize = fsize;
+	let xv = (button[index].getBoundingClientRect().left + button[index].getBoundingClientRect().right)/2 - (fontsize/2);
+	let yv = (button[index].getBoundingClientRect().top + button[index].getBoundingClientRect().bottom)/2;
+	let fl = window.innerHeight - fontsize -10;
+	  for (let i = 0; i < 10; i++) {
+		let coolGuy = new emoji(simon[Math.floor(Math.random() * simon.length)], xv, yv, fl, fontsize);
 		flyingMen.push(coolGuy);
 	  }
 	  button[index].classList.add("people--touched");
@@ -91,9 +90,9 @@ function goB(index) {
 
 //Rendering
 function render() {
-  for (var i = 0; i < flyingMen.length; i++) {
+  for (let i = 0; i < flyingMen.length; i++) {
     flyingMen[i].refresh();
-    if(flyingMen[i].isAlive == false) {
+    if(!flyingMen[i].isAlive) {
       flyingMen[i].element.remove();
       flyingMen.splice(i, 1);
     }
