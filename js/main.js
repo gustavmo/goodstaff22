@@ -19,11 +19,11 @@ loveSlide[0].addEventListener("click", function () {
     moveSlide();
 });
 
-const doSlide = document.getElementsByClassName("do");
-doSlide[0].addEventListener("click", function () {
+const doSlide = document.getElementsByClassName("do")[0].addEventListener("click", gotoDo);
+export function gotoDo() {
     curSlide = 2;
     moveSlide();
-});
+}
 
 function moveSlide() {
     slides.forEach((slide, indx) => {

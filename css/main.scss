@@ -114,22 +114,22 @@ footer {
   color: white;
   padding: 1rem 0;
   width: 100%;
-}
 
-footer .fwrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
+  .fwrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 
-a {
-  padding: 0.5rem 2rem;
-  text-decoration: none;
-  color: white;
-}
-
-a:hover,
-a:focus {
-  background: white;
-  color: #292561;
+  a {
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover,
+  a:focus {
+    background: white;
+    color: #292561;
+  }
 }

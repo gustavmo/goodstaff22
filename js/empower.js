@@ -1,3 +1,5 @@
+import {gotoDo} from './main.js'
+
 
 let flyingMen = [];
 let touched = [];
@@ -81,7 +83,7 @@ function goB(index) {
     button[index].classList.add("people--touched");
     touched[index] = true;
     if (checker(touched)) {
-      prize[0].classList.add("prize-visible");
+      gotoDo();
     }
   }
 }

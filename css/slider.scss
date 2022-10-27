@@ -1,17 +1,15 @@
-.slider {
+.slides {
     width: 100%;
     max-width: 800px;
     height: 350px;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
   }
 
   .slide {
     width: 100%;
     max-width: 800px;
-    height: 350px;
-    margin-top: 30%;
+    min-height: 350px;
     position: absolute;
     transition: all 0.5s;
   }
