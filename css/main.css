@@ -10,6 +10,8 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  font-family: Raleway, sans-serif;
+  font-weight: normal;
 }
 
 section {
@@ -23,8 +25,6 @@ h1 {
   text-align: center;
   color: #292561;
   font-size: 3rem;
-  font-family: Raleway;
-  font-weight: normal;
   margin: 2rem 0 0 0;
 }
 
@@ -38,8 +38,6 @@ h2 {
   text-align: center;
   color: black;
   font-size: 1.5rem;
-  font-family: Raleway;
-  font-weight: normal;
   margin: 1rem;
 }
 
@@ -128,8 +126,6 @@ a {
   padding: 0.5rem 2rem;
   text-decoration: none;
   color: white;
-  font-family: Raleway;
-  font-weight: normal;
 }
 
 a:hover,
