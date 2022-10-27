@@ -16,10 +16,10 @@ function emoji(face, startx, starty, flour, fs) {
   this.flourLevel = flour;
   this.fontSize = fs;
 
-  this.yincrement = Math.floor((Math.random() * 12) + 1);
-  this.yincrement *= Math.floor(Math.random() * 3) == 1 ? 1 : -1;
-  this.xincrement = Math.floor((Math.random() * 10) + 1);
-  this.xincrement *= Math.floor(Math.random() * 2) == 1 ? 1 : -1;
+  this.yincrement = Math.floor((cryptoRandom() * 12) + 1);
+  this.yincrement *= Math.floor(cryptoRandom() * 3) == 1 ? 1 : -1;
+  this.xincrement = Math.floor((cryptoRandom() * 10) + 1);
+  this.xincrement *= Math.floor(cryptoRandom() * 2) == 1 ? 1 : -1;
   this.element = document.createElement('div');
   this.element.innerHTML = face;
   this.element.style.position = "absolute";
@@ -75,7 +75,7 @@ function goB(index) {
     let yv = (button[index].getBoundingClientRect().top + button[index].getBoundingClientRect().bottom) / 2;
     let fl = window.innerHeight - fontsize - 10;
     for (let i = 0; i < 10; i++) {
-      let coolGuy = new emoji(simon[Math.floor(Math.random() * simon.length)], xv, yv, fl, fontsize);
+      let coolGuy = new emoji(simon[Math.floor(cryptoRandom() * simon.length)], xv, yv, fl, fontsize);
       flyingMen.push(coolGuy);
     }
     button[index].classList.add("people--touched");
@@ -103,3 +103,10 @@ function render() {
 render();
 
 let checker = arr => arr.every(Boolean);
+
+function cryptoRandom() {
+  const typedArray = new Uint8Array(1);
+  const randomValue = crypto.getRandomValues(typedArray)[0];
+  const randomFloat = randomValue / Math.pow(2, 8);
+  return randomFloat;
+}
