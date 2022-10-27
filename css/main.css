@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("../assets/Raleway-Light.ttf") format("truetype");
+  font-display: swap;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: #292561;
+  font-size: 3rem;
+  font-family: Raleway;
+  font-weight: normal;
+  margin: 2rem 0 0 0;
+}
+
+@media only screen and (min-width : 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+h2 {
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+  font-family: Raleway;
+  font-weight: normal;
+  margin: 1rem;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.bg-logo {
+  opacity: 0.1;
+}
+
+.people {
+  position: absolute;
+  overflow: hidden;
+  filter: grayscale(1);
+  border: 0;
+  width: 40px;
+}
+
+.p1 {
+  top: 10%;
+  left: 38%;
+}
+
+.p2 {
+  top: 64%;
+  left: 27%;
+}
+
+.p3 {
+  top: 31%;
+  left: 29%;
+}
+
+.p4 {
+  top: 58%;
+  left: 68%;
+}
+
+.p5 {
+  top: 18%;
+  left: 62%;
+}
+
+.people--touched {
+  filter: grayscale(0);
+  animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@keyframes neonGlow {
+  0% {
+    filter: drop-shadow(-1px 5px 3px rgba(39, 168, 225, 1));
+  }
+
+  100% {
+    filter: drop-shadow(2px -5px 3px rgba(39, 168, 225, 1));
+  }
+}
+
+.prize {
+  visibility: hidden;
+}
+
+.prize-visible {
+  visibility: visible;
+}
+
+
+
+footer {
+  background: #292561;
+  color: white;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+footer .fwrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+a {
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  color: white;
+  font-family: Raleway;
+  font-weight: normal;
+}
+
+a:hover,
+a:focus {
+  background: white;
+  color: #292561;
+}
